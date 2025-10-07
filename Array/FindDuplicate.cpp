@@ -1,5 +1,6 @@
 #include<iostream>
 #include<algorithm>
+#include<vector>
 using namespace std;
 //BRUTE FORCE
 // int Duplicate(int arr[], int n){
@@ -24,6 +25,17 @@ using namespace std;
 //     return -1;
 // }
 
+int Duplicate(int arr[], int n) 
+{
+    int ans = 0;
+    for(int i = 0; i < n; i++){
+        ans ^= arr[i];
+    }
+    for(int i = 1; i< n; i++){
+        ans ^= i;
+    }
+    return ans;
+}
 
 //HASH_MAP
 

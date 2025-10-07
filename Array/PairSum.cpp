@@ -17,22 +17,22 @@ using namespace std;
 // }
 
 //For SORTED Array => Two Pointer Approach
-vector<int>PairSum(vector<int>arr, int target){
-    vector<int>ans;
-    int i = arr[0], j = arr.size()-1;
-    while(i<j){
-        if(arr[i]+arr[j]>target){
-            j--;
-        }else if(arr[i]+arr[j]<target){
-            i++;
-        }else{
-            ans.push_back(i);
-            ans.push_back(j);
-            return ans;
-        }
-    }
-    return ans;
-}
+// vector<int>PairSum(vector<int>arr, int target){
+//     vector<int>ans;
+//     int i = arr[0], j = arr.size()-1;
+//     while(i<j){
+//         if(arr[i]+arr[j]>target){
+//             j--;
+//         }else if(arr[i]+arr[j]<target){
+//             i++;
+//         }else{
+//             ans.push_back(i);
+//             ans.push_back(j);
+//             return ans;
+//         }
+//     }
+//     return ans;
+// }
 
 int main(){
     vector<int> arr ={1,2,3,4,5,6,7,8,9,0};
