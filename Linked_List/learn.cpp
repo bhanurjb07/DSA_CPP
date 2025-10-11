@@ -5,21 +5,23 @@ class Node{
     Node* next;
 
 public:
-Node(int val){
-    data = val;
-    next = NULL;
-}
+    Node(int val){
+        data = val;
+        next = NULL;
+    }
+};
+
 class List{
     Node* head;
     Node* tail;
-
 public:
-List(){
-    head = NULL;
-    tail = NULL;
-}
+    List(){
+        head = NULL;
+        tail = NULL;
+    }
 };
-};
+
 int main(){
+    List ll();
     return 0;
 }
