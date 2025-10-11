@@ -1,27 +1,20 @@
 #include<iostream>
 using namespace std;
 class Node{
+    public:
     int data;
     Node* next;
 
-public:
-    Node(int val){
-        data = val;
-        next = NULL;
-    }
-};
-
-class List{
-    Node* head;
-    Node* tail;
-public:
-    List(){
-        head = NULL;
-        tail = NULL;
-    }
+    //constructor
+    Node(int data){
+        this -> data = data;
+        this -> next = NULL;
+    } 
 };
 
 int main(){
-    List ll();
+    Node* node1  = new Node(100);
+    cout << node1 -> data <<endl;
+    cout << node1 -> next <<endl;;
     return 0;
 }
