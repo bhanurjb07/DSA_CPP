@@ -1,38 +1,31 @@
-#include <bits/stdc++.h>
+#include<iostream>
+#include<vector>
+#include<algorithm>
 using namespace std;
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
+class Node{
+    public:
+    int val;
+    Node* left;
+    Node* right;
 
-    int t;
-    cin >> t;
-    while (t--) {
-        int n, m;
-        cin >> n >> m;
-        vector<int> a(m);
-        for (int i = 0; i < m; i++) cin >> a[i];
-
-        bool consecutive = true;
-        for (int i = 1; i < m; i++) {
-            if (a[i] != a[i-1] + 1) {
-                consecutive = false;
-                break;
-            }
-        }
-
-        int ans;
-        if (consecutive) {
-            if (a[0] == 1) {
-                ans = n - (m - 1);
-            } else {
-                ans = n - a.back() + 1;
-            }
-        } else {
-            ans = 1;
-        }
-
-        cout << ans << "\n";
+    Node(int data){
+        this->val=data;
+        left=right=NULL;
     }
+};
+int i = -1;
+    Node* buildTree(vector<int>arr){
+        i++;
+        if(arr[i]== -1){
+            return NULL;
+        }
+        Node* currNode = new Node(arr[i]);
+        currNode->left = buildTree(arr);
+        currNode->right = buildTree(arr);
 
+        return currNode;
+    }
+int main(){
+    vector<int>arr = {1,2,-1,-1,3,4,5,6,-1,-1,7,8,9,0,-1,-1};
     return 0;
 }
